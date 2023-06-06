@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>News Articles</title>
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700&display=swap"
+        rel="stylesheet">
+    </head>
+
+    <body>
+
+        <header>
+            <h1>Evaluating a News post using the MeaningCloud API.</h1>
+        </header>
+
+        <main>
+            <section class="input_section">
+                <form class="" id="submit" onsubmit="return Client.handleSubmit(event)">
+                    <div class="error_message" id="errorMessage"></div>
+                    <input class="user_input" id="urlInput" type="text" name="input" value=""
+                        placeholder="Enter a URL here">
+                    <input class="btn" type="submit" id="submit" value="Analysis"
+                        onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            </section>
+            <section class="output_section">
+                <h3>Results:</h3>
+                <div class="results" id="result_output"></div>
+                <div class="subjectivity" id="subjectivity_output"></div>
+                <div class="score" id="score_output"></div>
+            </section>
+        </main>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+
+        <footer>
+            <p>@copyright Jonatan Horton</p>
+        </footer>
+
+    </body>
+</html>
