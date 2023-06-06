@@ -22,18 +22,11 @@ function handleSubmit(event) {
                 updateUI(res);
             })
     } else {
-        // show error message
-        // append error message to error message div
-        // something like this
+        
         const errorMessageDiv = document.querySelector('#errorMessage');
-        // create a fragment with a span including the errorMessage variable
-        //const fragment = new DocumentFragment();
         const spanEl = document.createElement('span');
         spanEl.innerText = "Invalid URL";
-        //fragment.appendChild(spanEl);
         errorMessageDiv.appendChild(spanEl);
-
-
         console.log(errorMessage, "invalid url")
     }
 
